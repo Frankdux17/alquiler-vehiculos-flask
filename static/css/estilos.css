@@ -1,0 +1,59 @@
+:root {
+    --vino: #8b1024;
+    --vino-oscuro: #5e0b18;
+}
+
+body {
+    background-color: #f5f6f8;
+}
+
+.barra {
+    background: linear-gradient(90deg, var(--vino-oscuro), var(--vino));
+}
+
+.btn-vino {
+    background-color: var(--vino);
+    border-color: var(--vino);
+    color: #fff;
+}
+
+.btn-vino:hover,
+.btn-vino:focus {
+    background-color: var(--vino-oscuro);
+    border-color: var(--vino-oscuro);
+    color: #fff;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .08);
+}
+
+.tarjeta-resumen .icono {
+    font-size: 2rem;
+    color: var(--vino);
+}
+
+.tarjeta-resumen .numero {
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.table thead th {
+    background-color: var(--vino);
+    color: #fff;
+    white-space: nowrap;
+}
+
+.placa {
+    font-family: Consolas, "Courier New", monospace;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+.total-alquiler {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--vino);
+}

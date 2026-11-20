@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+<div class="mb-4">
+    <h1 class="h3 mb-1">Sistema de alquiler de vehículos</h1>
+    <p class="text-muted mb-0">Gestione los vehículos, los clientes y los alquileres desde un solo lugar.</p>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-6 col-lg-3">
+        <div class="card tarjeta-resumen h-100"><div class="card-body d-flex align-items-center gap-3">
+            <i class="bi bi-car-front-fill icono"></i>
+            <div><div class="numero">{{ resumen.vehiculos }}</div><div class="text-muted small">Vehículos</div></div>
+        </div></div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="card tarjeta-resumen h-100"><div class="card-body d-flex align-items-center gap-3">
+            <i class="bi bi-check-circle-fill icono"></i>
+            <div><div class="numero">{{ resumen.disponibles }}</div><div class="text-muted small">Disponibles</div></div>
+        </div></div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="card tarjeta-resumen h-100"><div class="card-body d-flex align-items-center gap-3">
+            <i class="bi bi-people-fill icono"></i>
+            <div><div class="numero">{{ resumen.clientes }}</div><div class="text-muted small">Clientes</div></div>
+        </div></div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="card tarjeta-resumen h-100"><div class="card-body d-flex align-items-center gap-3">
+            <i class="bi bi-cash-coin icono"></i>
+            <div><div class="numero">S/ {{ "%.2f"|format(resumen.ingresos) }}</div>
+                 <div class="text-muted small">En {{ resumen.alquileres }} alquiler(es)</div></div>
+        </div></div>
+    </div>
+</div>
+
+<div class="row g-3">
+    <div class="col-md-4">
+        <div class="card h-100"><div class="card-body">
+            <h2 class="h5"><i class="bi bi-car-front"></i> Vehículos</h2>
+            <p class="text-muted">Registre, edite y elimine vehículos, y consulte su disponibilidad.</p>
+            <a href="{{ url_for('vehiculos_listar') }}" class="btn btn-vino">Ir a vehículos</a>
+        </div></div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100"><div class="card-body">
+            <h2 class="h5"><i class="bi bi-people"></i> Clientes</h2>
+            <p class="text-muted">Mantenga los datos de los clientes: nombres, apellidos, DNI y teléfono.</p>
+            <a href="{{ url_for('clientes_listar') }}" class="btn btn-vino">Ir a clientes</a>
+        </div></div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100"><div class="card-body">
+            <h2 class="h5"><i class="bi bi-calendar-check"></i> Alquileres</h2>
+            <p class="text-muted">Registre alquileres y obtenga el costo total calculado automáticamente.</p>
+            <a href="{{ url_for('alquileres_listar') }}" class="btn btn-vino">Ir a alquileres</a>
+        </div></div>
+    </div>
+</div>
+{% endblock %}
